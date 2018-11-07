@@ -13,7 +13,7 @@ console.log(house);
 const scoreAdd = admin.database().ref('score').child(house);
 	
 return scoreAdd.transaction((current)=>{
-	return (current||0)+score;
+	return (current||0) + +score;
 
 });
 
