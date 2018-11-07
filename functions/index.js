@@ -7,7 +7,9 @@ exports.pushTransaction = functions.database.ref('main/events/{event_name}/{posi
 
 
 const score = snapshot.score.val();
+console.log(score);
 const house = snapshot.house.val();
+console.log(house);
 const scoreAdd = admin.database().ref('score').child(house);
 	
 return scoreAdd.transaction((current)=>{
