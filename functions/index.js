@@ -10,7 +10,7 @@ const score = snapshot.val().score;
 console.log(score);
 const house = snapshot.val().house;
 console.log(house);
-const scoreAdd = admin.database().ref('score').child(house);
+const scoreAdd = admin.database().ref('Score/House').child(house);
 	
 return scoreAdd.transaction((current)=>{
 	return((+current||0) + +score).toString();
